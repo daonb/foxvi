@@ -1,0 +1,23 @@
+<section id='list' data-ng-controller="DirectivesController" data-ng-init="find()">
+  <ul class="directives unstyled">
+    <li data-ng-repeat="directive in directives">
+      <span>{{directive.created | date:'medium'}}</span> /
+      <span>{{directive.user.name}}</span>
+      <h2>
+        <a data-ng-href="#!/d/{{directive._id}}">{{directive.text}}</a>
+        <span data-ng-if="hasAuthorization(directive)">
+          <a class="btn" href="/#!/d/{{directive._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn" data-ng-click="remove(directive);">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </span>
+      </h2>
+    </li>
+  </ul>
+  <h1 data-ng-hide="!directives || directives.length">No directives yet.
+    <br> Why don't you <a href="/#!/d/create">Create One</a>?</h1>
+  bla bla bla
+</section>
+

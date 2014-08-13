@@ -17,7 +17,18 @@ Directives.register(function(app, auth, database) {
   Directives.routes(app, auth, database);
 
   //We are adding a link to the main menu for all authenticated users
-  Directives.menus.add({
+  Directives.menus
+   .add({
+    roles: ['authenticated'],
+    title: 'Directives',
+    link: 'all dirs'
+   })
+   .add({
+    roles: ['authenticated'],
+    title: 'Create New Directive',
+    link: 'create dir'
+   })
+   .add({
     title: 'directives example page',
     link: 'directives example page',
     roles: ['authenticated'],
