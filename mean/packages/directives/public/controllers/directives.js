@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('mean.directives').controller('DirectivesController', ['$scope', 'Global', 'Directives',
-  function($scope, $stateParams, $location, Global, Directives) {
+angular.module('mean.directives').controller('DirectivesController', ['$scope', 'Global', '$stateParams', '$location', 'Directives', function($scope, $stateParams, $location, Global, Directives) {
     $scope.global = Global;
 
     $scope.hasAuthorization = function(directive) {

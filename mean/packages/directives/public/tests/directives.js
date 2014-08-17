@@ -1,13 +1,15 @@
+'use strict';
+
 describe('Unit:DirectivesController', function() {
   beforeEach(function() {
     module('mean');
     module('mean.system');
-    module('mean.directives')
+    module('mean.directives');
   });
   var ctrl, scope;
   beforeEach(inject(function($controller, $rootScope) {
     scope = $rootScope.$new();
-    ctrl = $controller('DirectiveController', {
+    ctrl = $controller('DirectivesController', {
       $scope: scope
     });
   }));
@@ -16,4 +18,4 @@ describe('Unit:DirectivesController', function() {
        scope.find();
        expect(scope.directives).toBeNull();
   });
-}) 
+});
